@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "15000:3000"
+    entrypoint:
+      - /usr/bin/tini
+      - --
+    command: npm run start:dev
