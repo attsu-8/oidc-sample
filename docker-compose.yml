@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: ./docker/node/Dockerfile
       target: development
     volumes:
       - ./:/usr/src/app
